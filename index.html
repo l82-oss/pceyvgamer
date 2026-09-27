@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PCEYVGAMERS | PC Gaming</title><meta name="description" content="PCEYVGAMERS - Componentes PC, gaming y accesorios">
+<link rel="stylesheet" href="style.css"></head><body>
+<div class="top">🚚 Envíos a todo Ecuador · 💬 Atención por WhatsApp · 🎮 PC Gaming</div>
+<header><a class="brand" href="#">PC<span>EYVGAMERS</span></a><button class="hamb">☰</button>
+<nav><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#ofertas">Ofertas</a><a href="#contacto">Contacto</a></nav>
+<div class="head-actions"><button id="searchBtn">🔎</button><button id="cartBtn">🛒 <b id="count">0</b></button></div></header>
+<section class="hero"><div><small>PCEYVGAMERS · COMPONENTES & GAMING</small><h1>Potencia tu <span>setup.</span></h1><p>Componentes, periféricos y accesorios para gaming, trabajo y creación de contenido.</p><div><a class="btn primary" href="#productos">Comprar ahora</a><a class="btn ghost" id="heroWA">💬 Cotizar</a></div></div><div class="hero-art"><div class="orb">GPU</div><strong>BUILD YOUR<br>PC</strong></div></section>
+<section id="categorias" class="wrap"><div class="title"><div><small>CATEGORÍAS</small><h2>Encuentra lo que buscas</h2></div></div><div class="cats">
+<button data-cat="GPU">🎮<b>Tarjetas gráficas</b></button><button data-cat="CPU">⚡<b>Procesadores</b></button><button data-cat="RAM">🧠<b>Memorias RAM</b></button><button data-cat="SSD">💾<b>SSD / NVMe</b></button><button data-cat="MOTHERBOARD">🔧<b>Placas madre</b></button><button data-cat="PERIFERICOS">🖱️<b>Periféricos</b></button></div></section>
+<section id="productos" class="wrap"><div class="title row"><div><small>CATÁLOGO</small><h2>Productos</h2></div><div class="filters"><button class="active" data-filter="TODOS">Todos</button><button data-filter="GPU">GPU</button><button data-filter="CPU">CPU</button><button data-filter="RAM">RAM</button><button data-filter="SSD">SSD</button><button data-filter="MOTHERBOARD">Placas</button><button data-filter="PERIFERICOS">Periféricos</button></div></div><div class="products" id="products"></div></section>
+<section id="ofertas" class="offer"><div><small>OFERTA / COTIZACIÓN</small><h2>¿Armando una PC?</h2><p>Envíanos tu presupuesto y los componentes que buscas. Te respondemos por WhatsApp.</p></div><a class="btn primary" id="offerWA">Hablar con un asesor</a></section>
+<section class="wrap benefits"><div><b>✓ Atención personalizada</b><span>Consulta compatibilidad y rendimiento.</span></div><div><b>✓ Pedidos por WhatsApp</b><span>Recibe tu cotización rápidamente.</span></div><div><b>✓ Catálogo editable</b><span>Administra productos desde el panel.</span></div></section>
+<footer id="contacto"><div><a class="brand" href="#">PC<span>EYVGAMERS</span></a><p>Componentes PC · Gaming · Accesorios</p></div><div class="social"><a id="fb">Facebook</a><a id="ig">Instagram</a><a id="wa">WhatsApp</a><a href="admin/index.html">Administrador</a></div><small>© <span id="year"></span> PCEYVGAMERS</small></footer>
+<div id="modal" class="modal hide"><div class="box"><button class="x">×</button><h2>Carrito</h2><div id="items"></div><div class="total"><span>Total</span><b id="total">$0.00</b></div><button class="btn primary full" id="send">Enviar pedido por WhatsApp</button><button class="btn ghost full" id="empty">Vaciar carrito</button></div></div>
+<script src="script.js"></script></body></html>

@@ -1,0 +1,13 @@
+const DEFAULTS={whatsapp:"593XXXXXXXXX",facebook:"https://facebook.com/PCEYVGAMERS",instagram:"https://instagram.com/PCEYVGAMERS"};
+let config=JSON.parse(localStorage.getItem("pce_config")||"null")||DEFAULTS;
+let products=JSON.parse(localStorage.getItem("pce_products")||"null")||[
+{id:1,cat:"GPU",name:"Tarjeta gráfica Gaming 8GB",price:299.99,old:329.99,icon:"🎮",stock:7},{id:2,cat:"GPU",name:"Tarjeta gráfica Gaming 12GB",price:449.99,icon:"🚀",stock:4},{id:3,cat:"CPU",name:"Procesador Gaming 6 núcleos",price:189.99,icon:"⚡",stock:8},{id:4,cat:"CPU",name:"Procesador Gaming 8 núcleos",price:269.99,icon:"🔥",stock:5},{id:5,cat:"RAM",name:"Memoria RAM DDR4 16GB",price:49.99,icon:"🧠",stock:15},{id:6,cat:"RAM",name:"Memoria RAM DDR5 32GB",price:94.99,icon:"🧠",stock:9},{id:7,cat:"SSD",name:"SSD NVMe 1TB",price:69.99,icon:"💾",stock:12},{id:8,cat:"MOTHERBOARD",name:"Placa madre Gaming",price:129.99,icon:"🔧",stock:6},{id:9,cat:"PERIFERICOS",name:"Teclado mecánico RGB",price:59.99,icon:"⌨️",stock:10},{id:10,cat:"PERIFERICOS",name:"Mouse Gaming RGB",price:29.99,icon:"🖱️",stock:20}];
+whatsapp.value=config.whatsapp;facebook.value=config.facebook;instagram.value=config.instagram;
+saveConfig.onclick=()=>{config={whatsapp:whatsapp.value,facebook:facebook.value,instagram:instagram.value};localStorage.setItem("pce_config",JSON.stringify(config));alert("Configuración guardada.");};
+function save(){localStorage.setItem("pce_products",JSON.stringify(products));render()}
+function render(){table.innerHTML=products.map((p,i)=>`<div class="item"><input value="${p.icon||""}" onchange="products[${i}].icon=this.value;save()"><input class="wide" value="${p.name}" onchange="products[${i}].name=this.value;save()"><input value="${p.price}" type="number" step=".01" onchange="products[${i}].price=+this.value;save()"><input value="${p.stock}" type="number" onchange="products[${i}].stock=+this.value;save()"><button class="danger" onclick="del(${i})">Borrar</button></div>`).join("")}
+function del(i){if(confirm("¿Borrar este producto?")){products.splice(i,1);save()}}
+new.onclick=()=>{products.push({id:Date.now(),cat:"GPU",name:"Nuevo producto",price:0,icon:"🖥️",stock:0});save()}
+export.onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(products,null,2)],{type:"application/json"}));a.download="pceyvgamers_catalogo.json";a.click()};
+import.onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{products=JSON.parse(r.result);save();alert("Catálogo importado.")}catch{alert("JSON inválido.")}};r.readAsText(f)};
+render();

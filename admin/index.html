@@ -1,0 +1,7 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin | PCEYVGAMERS</title><link rel="stylesheet" href="admin.css"></head><body>
+<header><a href="../index.html">← Ver tienda</a><b>PCEYVGAMERS / ADMIN</b></header><main>
+<section><h1>Panel administrador</h1><p class="hint">Este panel funciona localmente en el navegador. Los cambios se guardan en el dispositivo donde los hagas. Para una tienda multiusuario/online con inventario centralizado necesitarás backend.</p></section>
+<section><h2>Configuración de redes</h2><label>WhatsApp (código país, sin +):<input id="whatsapp"></label><label>Facebook:<input id="facebook"></label><label>Instagram:<input id="instagram"></label><button id="saveConfig">Guardar configuración</button></section>
+<section><div class="bar"><h2>Productos</h2><button id="new">+ Nuevo producto</button></div><div id="table"></div></section>
+<section><h2>Respaldo</h2><button id="export">Exportar catálogo JSON</button><label class="file">Importar catálogo JSON<input type="file" id="import" accept=".json"></label></section>
+</main><script src="admin.js"></script></body></html>
